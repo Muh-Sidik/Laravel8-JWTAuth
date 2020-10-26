@@ -14,11 +14,11 @@ class Controller extends BaseController
 
     protected function responseWithToken($token)
     {
-        // return response()->json([
-        //     'access_token'  => $token,
-        //     'token_type'    => 'bearer',
-        //     'expires_in'    => JWTAuth::factory()->getTTL() * 60,
-        //     'user'          => auth()->user(),
-        // ]);
+        return response()->json([
+            'access_token'  => $token,
+            'token_type'    => 'bearer',
+            'expires_in'    => JWTAuth::factory()->getTTL() * 60,
+            'user'          => auth()->user(),
+        ]);
     }
 }
